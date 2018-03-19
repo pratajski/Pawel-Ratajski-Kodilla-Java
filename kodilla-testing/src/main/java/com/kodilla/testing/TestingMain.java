@@ -1,36 +1,21 @@
 package com.kodilla.testing;
 
+import com.kodilla.testing.collection.OddNumbersExterminator;
 import com.kodilla.testing.user.SimpleUser;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 public class TestingMain {
     public static void main(String[] args){
-        SimpleUser simpleUser = new SimpleUser("theForumUser");
+        ArrayList<Integer> list = new ArrayList<Integer>();
 
-        String result = simpleUser.getUsername();
+        for (int i=0;i<10;i++) {
+            Random number = new Random();
+            int numbers = number.nextInt(100);
+            list.add(numbers);
 
-        if (result.equals("theForumUser")){
-            System.out.println("test OK");
-        } else {
-            System.out.println("Error!");
         }
-
-        Calculator calculator = new Calculator();
-        int resultCalculatorAdd = calculator.add(2,2);
-        int resultCalculatorSubtract = calculator.subtract(2,2);
-            if ((resultCalculatorAdd == 4)&&(resultCalculatorSubtract == 0)){
-                System.out.println("Calculator is OK");
-            }else {
-                System.out.println("Calculator Error!");
-            }
-
-
-
-
-
-
-
-
-
-
+        OddNumbersExterminator.exterminate(list);
     }
 }
