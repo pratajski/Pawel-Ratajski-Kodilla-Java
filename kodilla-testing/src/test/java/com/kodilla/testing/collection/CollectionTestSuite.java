@@ -37,6 +37,12 @@ public class CollectionTestSuite {
         ArrayList<Integer> list = new ArrayList<Integer>();
         list.add(55);
         list.add(4);
+        list.add(15);
+        list.add(88);
+        list.add(1);
+        list.add(0);
+        list.add(87);
+        list.add(60);
         OddNumbersExterminator.exterminate(list);
 
     }
