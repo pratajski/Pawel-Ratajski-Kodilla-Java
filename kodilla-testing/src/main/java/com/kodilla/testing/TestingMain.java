@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class TestingMain {
     public static void main(String[] args){
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList<>();
 
         for (int i=0;i<10;i++) {
             Random number = new Random();
@@ -16,6 +16,8 @@ public class TestingMain {
             list.add(numbers);
 
         }
+
         OddNumbersExterminator.exterminate(list);
+        System.out.println(OddNumbersExterminator.exterminate(list));
     }
 }

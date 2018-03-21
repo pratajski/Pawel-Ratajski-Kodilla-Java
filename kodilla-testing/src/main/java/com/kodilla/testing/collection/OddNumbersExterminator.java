@@ -10,14 +10,14 @@ W utworzonym pakiecie stwórz klasę OddNumbersExterminator posiadającą metod�
 import java.util.ArrayList;
 
 public class OddNumbersExterminator {
-    public static void exterminate(ArrayList<Integer> numbers){
+    public static ArrayList<Integer> exterminate(ArrayList<Integer> numbers){
+        ArrayList<Integer> even = new ArrayList<>();
+       // ArrayList<Integer> odd = new ArrayList<>();
        for (Integer n: numbers) {
            if (n % 2 == 0) {
-               System.out.println("Liczba parzysta: " + n);
-           }else {
-               System.out.println("Liczba nieparzysta: " + n);
+               even.add(n);
            }
        }
-
+    return even;
     }
 }

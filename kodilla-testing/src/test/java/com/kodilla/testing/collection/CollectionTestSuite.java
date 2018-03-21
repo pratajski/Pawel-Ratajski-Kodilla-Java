@@ -24,18 +24,14 @@ public class CollectionTestSuite {
 
     @Test
     public void testOddNumbersExterminatorEmptyList() {
-        //OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        OddNumbersExterminator.exterminate(list);
-        //int length = list.size();
-        //System.out.println(length);
-        //OddNumbersExterminator.exterminate();
-
+        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> result = OddNumbersExterminator.exterminate(list);
+        Assert.assertEquals(result.size(),0);
     }
     @Test
     public void testOddNumbersExterminatorNormalList() {
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        list.add(55);
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(50);
         list.add(4);
         list.add(15);
         list.add(88);
@@ -44,7 +40,8 @@ public class CollectionTestSuite {
         list.add(87);
         list.add(60);
         OddNumbersExterminator.exterminate(list);
-
+        ArrayList<Integer> result = OddNumbersExterminator.exterminate(list);
+        Assert.assertEquals(result.size(),5);
     }
 
 
