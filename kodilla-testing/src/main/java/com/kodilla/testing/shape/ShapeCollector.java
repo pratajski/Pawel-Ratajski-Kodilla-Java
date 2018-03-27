@@ -1,5 +1,4 @@
 package com.kodilla.testing.shape;
-//square, circle, triangle
 import java.util.ArrayList;
 
 public class ShapeCollector {
