@@ -2,6 +2,7 @@ package com.kodilla.testing;
 
 import com.kodilla.testing.collection.OddNumbersExterminator;
 import com.kodilla.testing.shape.Shape;
+import com.kodilla.testing.shape.ShapeCollector;
 import com.kodilla.testing.user.SimpleUser;
 
 import java.util.ArrayList;
@@ -11,6 +12,8 @@ public class TestingMain {
     public static void main(String[] args){
         ArrayList<Integer> list = new ArrayList<>();
 
+
+
         for (int i=0;i<10;i++) {
             Random number = new Random();
             int numbers = number.nextInt(100);
@@ -18,9 +21,11 @@ public class TestingMain {
 
         }
 
+
+
         OddNumbersExterminator.exterminate(list);
         System.out.println(OddNumbersExterminator.exterminate(list));
 
-        //System.out.println(Sha);
+
     }
 }
