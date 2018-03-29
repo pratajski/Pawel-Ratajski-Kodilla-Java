@@ -29,9 +29,11 @@ public class ShapeCollectorTestSuite {
         //Given
         Circle circle = new Circle("kolo", 6);
         //When
-        String result = circle.getShapeName();
+        ShapeCollector shapeCollector = new ShapeCollector();
+        shapeCollector.addFigure(circle);
+        Shape result = shapeCollector.getShape(0);
         //Then
-        Assert.assertEquals("kolo", result);
+        Assert.assertEquals(result, circle);
     }
 
     @Test
@@ -74,4 +76,21 @@ public class ShapeCollectorTestSuite {
         Shape result = shapeCollector.getShape(0);
         Assert.assertEquals(result, circle);
     }
+
+    @Test
+    public void testShowFigures() {
+        //Given
+        Square square = new Square("kwadrat", 6);
+        ShapeCollector shapeCollector = new ShapeCollector();
+        shapeCollector.addFigure(square);
+
+        //When
+        String result = shapeCollector.showFigures();
+
+        //Then
+        Assert.assertEquals(result, "[" + square +"]");
+    }
+
+
+
 }

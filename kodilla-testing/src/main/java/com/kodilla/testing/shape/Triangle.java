@@ -21,5 +21,12 @@ public class Triangle implements Shape{
         return 0.5 * a * h;
     }
 
-
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "name='" + name + '\'' +
+                ", a=" + a +
+                ", h=" + h +
+                '}';
+    }
 }
