@@ -29,9 +29,7 @@ public class ShapeCollectorTestSuite {
         //Given
         Circle circle = new Circle("kolo", 6);
         //When
-        ShapeCollector shapeCollector = new ShapeCollector();
-        shapeCollector.addFigure(circle);
-        Shape result = shapeCollector.getShape(0);
+        String result = circle.getShapeName();
         //Then
         Assert.assertEquals("kolo", result);
     }

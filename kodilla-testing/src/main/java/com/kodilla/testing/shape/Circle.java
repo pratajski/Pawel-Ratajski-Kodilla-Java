@@ -19,12 +19,5 @@ public class Circle implements Shape{
         return 3.14 * r * r;
     }
 
-    @Override
-    public String toString() {
-        return "Circle{" +
-                "name='" + name + '\'' +
-                ", r=" + r +
-                '}';
-    }
 
 }
