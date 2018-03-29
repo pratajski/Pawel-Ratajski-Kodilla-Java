@@ -18,4 +18,13 @@ public class Circle implements Shape{
     public double getField() {
         return 3.14 * r * r;
     }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "name='" + name + '\'' +
+                ", r=" + r +
+                '}';
+    }
+
 }

@@ -20,4 +20,13 @@ public class Triangle implements Shape{
     public double getField() {
         return 0.5 * a * h;
     }
+
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "name='" + name + '\'' +
+                ", a=" + a +
+                ", h=" + h +
+                '}';
+    }
 }
