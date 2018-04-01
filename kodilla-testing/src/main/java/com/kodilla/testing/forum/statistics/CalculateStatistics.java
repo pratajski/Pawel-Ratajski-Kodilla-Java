@@ -1,7 +1,7 @@
 /*
 W pakiecie com.kodilla.testing.forum.statistics utwórz klasę obliczającą następujące statystyki:
 
-    liczbę użytkowników,-
+    liczbę użytkowników,
     liczbę postów.
     liczbę komentarzy,
     średnią liczbę postów na użytkownika,
@@ -23,16 +23,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CalculateStatistics implements Statistics{
-    int postsQuantity;
-    int commentsQuantity;
-    private List<String>usernames = new ArrayList<>();
-    Statistics statistics;
+  //  Statistics statistics;
 
-    public CalculateStatistics(int postsQuantity, int commentsQuantity, List<String> usernames) {
-        this.postsQuantity = postsQuantity;
-        this.commentsQuantity = commentsQuantity;
-        this.usernames = usernames;
-    }
+    private int postsQuantity;
+    private int commentsQuantity;
+    private double advPostsUser;
+    private List<String>usernames = new ArrayList<>();
+
+
+
 
     @Override
     public List<String> usersNames() {
@@ -51,12 +50,23 @@ public class CalculateStatistics implements Statistics{
     }
 
     public int usersQuantity (){
-        int quantityUsers = usernames.size();
-        return quantityUsers;
+        return usernames.size()+1;
+    }
+
+    public double advPostsUser() {
+        return usersQuantity()/postsQuantity;
+    }
+
+    public double advCommentsUser(){
+        return usersQuantity()/commentsQuantity;
+    }
+
+    public double advCommentsPosts(){
+        return commentsQuantity/postsQuantity;
     }
 
     public void calculateAdvStatistics(Statistics statistics){
-        this.statistics = statistics;
+       // this.statistics = statistics;
     }
 
     public void showStatistics(){

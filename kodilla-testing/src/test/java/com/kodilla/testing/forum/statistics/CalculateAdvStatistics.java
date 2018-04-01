@@ -8,7 +8,7 @@ import java.util.List;
 import static org.mockito.Mockito.mock;
 
 public class CalculateAdvStatistics {
-    @Test
+/*    @Test
     public void testCalculateStatisticsWithMock(){
         //Given
         Statistics statisticsMock = mock(Statistics.class);
@@ -19,9 +19,14 @@ public class CalculateAdvStatistics {
         statisticsMap.add("Czwarty User");
         statisticsMap.add("Piaty User");
         //When
-
+        //CalculateStatistics
         //Then
 
     }
+*/
+ //   @Test
+ //   public testUsersQuantity(){
+//        CalculateStatistics.
+//    }
 
 }
