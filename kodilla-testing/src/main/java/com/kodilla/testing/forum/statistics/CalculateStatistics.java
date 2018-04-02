@@ -25,12 +25,20 @@ import java.util.List;
 public class CalculateStatistics implements Statistics{
   //  Statistics statistics;
 
+    private int usersQuantity;
     private int postsQuantity;
     private int commentsQuantity;
     private double advPostsUser;
     private List<String>usernames = new ArrayList<>();
 
-
+    public void calculateAdvStatistics(Statistics statistics){
+        this.usernames = statistics.usersNames();
+ //       this.usersQuantity = usersQuantity;
+        this.postsQuantity = statistics.postsCount();
+        this.commentsQuantity = statistics.commentsCount();
+        this.advPostsUser = postsQuantity / (usernames.size()+1);
+        this.usersQuantity = usernames.size()+1;
+    }
 
 
     @Override
@@ -49,27 +57,9 @@ public class CalculateStatistics implements Statistics{
         return commentsQuantity;
     }
 
-    public int usersQuantity (){
-        return usernames.size()+1;
-    }
-
-    public double advPostsUser() {
-        return usersQuantity()/postsQuantity;
-    }
-
-    public double advCommentsUser(){
-        return usersQuantity()/commentsQuantity;
-    }
-
-    public double advCommentsPosts(){
-        return commentsQuantity/postsQuantity;
-    }
-
-    public void calculateAdvStatistics(Statistics statistics){
-       // this.statistics = statistics;
-    }
-
     public void showStatistics(){
-
+        System.out.println("Users Quantity");
+        System.out.println("Posts Quantity");
+        System.out.println("Comments Quantity");
     }
 }
