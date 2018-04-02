@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class CalculateAdvStatistics {
    @Test
@@ -20,8 +21,10 @@ public class CalculateAdvStatistics {
         statisticsMap.add("Trzeci User");
         statisticsMap.add("Czwarty User");
         statisticsMap.add("Piaty User");
+       when(statisticsMock.usersNames()).thenReturn(statisticsMap);
+       CalculateStatistics calculateStatistics = new CalculateStatistics(statisticsMock);
         //When
-  //      CalculateAdvStatistics.;
+
         //Then
         System.out.println(statisticsMap);
     }
