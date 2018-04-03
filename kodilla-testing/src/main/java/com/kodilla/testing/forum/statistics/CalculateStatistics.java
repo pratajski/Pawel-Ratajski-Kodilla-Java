@@ -33,11 +33,10 @@ public class CalculateStatistics implements Statistics{
 
     public void calculateAdvStatistics(Statistics statistics){
         this.usernames = statistics.usersNames();
- //       this.usersQuantity = usersQuantity;
         this.postsQuantity = statistics.postsCount();
         this.commentsQuantity = statistics.commentsCount();
         this.advPostsUser = postsQuantity / (usernames.size()+1);
-        this.usersQuantity = usernames.size()+1;
+        this.usersQuantity = usernames.size();
     }
 
 
@@ -45,6 +44,14 @@ public class CalculateStatistics implements Statistics{
     public List<String> usersNames() {
 
         return usernames;
+    }
+
+    public int getUsersQuantity() {
+        return usersQuantity;
+    }
+
+    public double getAdvPostsUser() {
+        return advPostsUser;
     }
 
     @Override
