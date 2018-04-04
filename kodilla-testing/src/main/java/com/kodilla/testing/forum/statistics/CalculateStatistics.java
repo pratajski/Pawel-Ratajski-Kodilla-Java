@@ -22,46 +22,62 @@ package com.kodilla.testing.forum.statistics;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CalculateStatistics implements Statistics{
+public class CalculateStatistics{
   //  Statistics statistics;
 
     private int usersQuantity;
     private int postsQuantity;
     private int commentsQuantity;
-    private double advPostsUser;
-    private List<String>usernames = new ArrayList<>();
+    private double averagePostsPerUser;
+    private double averageCommentsPerUser;
+    private double averageCommentsPerPost;
+ //   private List<String>usernames = new ArrayList<>();
 
     public void calculateAdvStatistics(Statistics statistics){
-        this.usernames = statistics.usersNames();
+        this.usersQuantity = statistics.usersNames().size();
         this.postsQuantity = statistics.postsCount();
         this.commentsQuantity = statistics.commentsCount();
-        this.advPostsUser = postsQuantity / (usernames.size()+1);
-        this.usersQuantity = usernames.size();
-    }
+        if (usersQuantity == 0){
+            this.averagePostsPerUser = 0;
+        }else{
+            this.averagePostsPerUser = (double) postsQuantity / usersQuantity;
+        }
 
+        if (usersQuantity == 0){
+            this.averageCommentsPerUser = 0;
+        }else{
+            this.averageCommentsPerUser = (double) commentsQuantity / usersQuantity;
+        }
 
-    @Override
-    public List<String> usersNames() {
-
-        return usernames;
+        if (postsQuantity == 0){
+            this.averageCommentsPerPost = 0;
+        }else {
+            this.averageCommentsPerPost = (double) commentsQuantity / postsQuantity;
+        }
     }
 
     public int getUsersQuantity() {
         return usersQuantity;
     }
 
-    public double getAdvPostsUser() {
-        return advPostsUser;
-    }
-
-    @Override
-    public int postsCount() {
+    public int getPostsQuantity() {
         return postsQuantity;
     }
 
-    @Override
-    public int commentsCount() {
+    public int getCommentsQuantity() {
         return commentsQuantity;
+    }
+
+    public double getAveragePostsPerUser() {
+        return averagePostsPerUser;
+    }
+
+    public double getAverageCommentsPerUser() {
+        return averageCommentsPerUser;
+    }
+
+    public double getAverageCommentsPerPost() {
+        return averageCommentsPerPost;
     }
 
     public void showStatistics(){

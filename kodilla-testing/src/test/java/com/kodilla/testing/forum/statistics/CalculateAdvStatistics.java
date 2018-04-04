@@ -23,7 +23,7 @@ public class CalculateAdvStatistics {
        calculateStatistics.calculateAdvStatistics(statistics0Posts);
 
         //Then
-        Assert.assertEquals(calculateStatistics.postsCount(), 0);
+        Assert.assertEquals(calculateStatistics.getPostsQuantity(), 0);
 
     }
 
@@ -38,7 +38,7 @@ public class CalculateAdvStatistics {
         calculateStatistics.calculateAdvStatistics(statistics1000Posts);
 
         //Then
-        Assert.assertEquals(calculateStatistics.postsCount(), 1000);
+      //  Assert.assertEquals(calculateStatistics.postsCount(), 1000);
     }
 
     @Test
@@ -52,14 +52,14 @@ public class CalculateAdvStatistics {
         calculateStatistics.calculateAdvStatistics(statistics0Comments);
 
         //Then
-        Assert.assertEquals(calculateStatistics.commentsCount(), 0);
+        Assert.assertEquals(calculateStatistics.getCommentsQuantity(), 0);
     }
 
     @Test
-    public void testCalculateStatisticsMoreCommentsThanPosts(){
+    public void testCalculateStatisticsCommentsAndPosts(){
         //Given
         Statistics statisticsMoreCommentsThanPosts = mock(Statistics.class);
-        when(statisticsMoreCommentsThanPosts.postsCount()).thenReturn(1000);
+        when(statisticsMoreCommentsThanPosts.postsCount()).thenReturn(100);
         when(statisticsMoreCommentsThanPosts.commentsCount()).thenReturn(1000);
 
 
@@ -67,30 +67,26 @@ public class CalculateAdvStatistics {
         CalculateStatistics calculateStatistics = new CalculateStatistics();
         calculateStatistics.calculateAdvStatistics(statisticsMoreCommentsThanPosts);
 
- //       calculateStatistics.calculateAdvStatistics(statisticsMoreCommentsThanPosts.postsCount());
- //       calculateStatistics.calculateAdvStatistics(statisticsMoreCommentsThanPosts.commentsCount());
-
         //Then
- //       Assert.assertEquals(calculateStatistics.postsCount(), 1000);
-    }
+       Assert.assertEquals(calculateStatistics.getPostsQuantity(), 100);
+       Assert.assertEquals(calculateStatistics.getCommentsQuantity(), 1000);
 
-    @Test
-    public void testCalculateStatisticsLessCommentsThanPosts(){
-        //Given
-        Statistics statisticsLessCommentsThanPosts = mock(Statistics.class);
-        when(statisticsLessCommentsThanPosts.postsCount()).thenReturn(1000);
-        when(statisticsLessCommentsThanPosts.commentsCount()).thenReturn(1000);
+//============================================================
+        when(statisticsMoreCommentsThanPosts.postsCount()).thenReturn(555);
+        when(statisticsMoreCommentsThanPosts.commentsCount()).thenReturn(100);
+
 
         //When
-        CalculateStatistics calculateStatistics = new CalculateStatistics();
-
- //       calculateStatistics.calculateAdvStatistics(statisticsLessCommentsThanPosts.postsCount());
- //       calculateStatistics.calculateAdvStatistics(statisticsLessCommentsThanPosts.commentsCount());
+        CalculateStatistics calculateStatistics2 = new CalculateStatistics();
+        calculateStatistics2.calculateAdvStatistics(statisticsMoreCommentsThanPosts);
 
         //Then
- //       Assert.assertEquals(calculateStatistics.postsCount(), 1500);
-    }
+        Assert.assertEquals(calculateStatistics2.getPostsQuantity(), 555);
+        Assert.assertEquals(calculateStatistics2.getCommentsQuantity(), 100);
 
+
+
+    }
 
     @Test
     public void testCalculateStatistics0Users(){
@@ -101,137 +97,16 @@ public class CalculateAdvStatistics {
  //       statisticsMap.add("Drugi User");
  //       statisticsMap.add("Trzeci User");
  //       statisticsMap.add("Czwarty User");
- //       statisticsMap.add("Piaty User");
+  //      statisticsMap.add("Piaty User");
+
         when(statistics0Users.usersNames()).thenReturn(statisticsMap);
 
         //When
         CalculateStatistics calculateStatistics = new CalculateStatistics();
-        calculateStatistics.getUsersQuantity();
+        calculateStatistics.calculateAdvStatistics(statistics0Users);
 
         //Then
-        Assert.assertEquals(calculateStatistics.usersNames(), 0);
+        Assert.assertEquals(calculateStatistics.getUsersQuantity(), 0);
     }
-
-    @Test
-    public void testCalculateStatistics100Users(){
-        //Given
-        Statistics statistics100Users = mock(Statistics.class);
-        ArrayList<String> statisticsMap = new ArrayList<>();
-        statisticsMap.add("Pierwszy User");
-        statisticsMap.add("Drugi User");
-        statisticsMap.add("Trzeci User");
-        statisticsMap.add("Czwarty User");
-        statisticsMap.add("Piaty User");
-        statisticsMap.add("Szósty User");
-        statisticsMap.add("Siódmy User");
-        statisticsMap.add("Ósmy User");
-        statisticsMap.add("Dziewiąty User");
-        statisticsMap.add("Dziesiąty User");
-        statisticsMap.add("Pierwszy User");
-        statisticsMap.add("Drugi User");
-        statisticsMap.add("Trzeci User");
-        statisticsMap.add("Czwarty User");
-        statisticsMap.add("Piaty User");
-        statisticsMap.add("Szósty User");
-        statisticsMap.add("Siódmy User");
-        statisticsMap.add("Ósmy User");
-        statisticsMap.add("Dziewiąty User");
-        statisticsMap.add("Dziesiąty User");
-        statisticsMap.add("Pierwszy User");
-        statisticsMap.add("Drugi User");
-        statisticsMap.add("Trzeci User");
-        statisticsMap.add("Czwarty User");
-        statisticsMap.add("Piaty User");
-        statisticsMap.add("Szósty User");
-        statisticsMap.add("Siódmy User");
-        statisticsMap.add("Ósmy User");
-        statisticsMap.add("Dziewiąty User");
-        statisticsMap.add("Dziesiąty User");
-        statisticsMap.add("Pierwszy User");
-        statisticsMap.add("Drugi User");
-        statisticsMap.add("Trzeci User");
-        statisticsMap.add("Czwarty User");
-        statisticsMap.add("Piaty User");
-        statisticsMap.add("Szósty User");
-        statisticsMap.add("Siódmy User");
-        statisticsMap.add("Ósmy User");
-        statisticsMap.add("Dziewiąty User");
-        statisticsMap.add("Dziesiąty User");
-        statisticsMap.add("Pierwszy User");
-        statisticsMap.add("Drugi User");
-        statisticsMap.add("Trzeci User");
-        statisticsMap.add("Czwarty User");
-        statisticsMap.add("Piaty User");
-        statisticsMap.add("Szósty User");
-        statisticsMap.add("Siódmy User");
-        statisticsMap.add("Ósmy User");
-        statisticsMap.add("Dziewiąty User");
-        statisticsMap.add("Dziesiąty User");
-        statisticsMap.add("Pierwszy User");
-        statisticsMap.add("Drugi User");
-        statisticsMap.add("Trzeci User");
-        statisticsMap.add("Czwarty User");
-        statisticsMap.add("Piaty User");
-        statisticsMap.add("Szósty User");
-        statisticsMap.add("Siódmy User");
-        statisticsMap.add("Ósmy User");
-        statisticsMap.add("Dziewiąty User");
-        statisticsMap.add("Dziesiąty User");
-        statisticsMap.add("Pierwszy User");
-        statisticsMap.add("Drugi User");
-        statisticsMap.add("Trzeci User");
-        statisticsMap.add("Czwarty User");
-        statisticsMap.add("Piaty User");
-        statisticsMap.add("Szósty User");
-        statisticsMap.add("Siódmy User");
-        statisticsMap.add("Ósmy User");
-        statisticsMap.add("Dziewiąty User");
-        statisticsMap.add("Dziesiąty User");
-        statisticsMap.add("Pierwszy User");
-        statisticsMap.add("Drugi User");
-        statisticsMap.add("Trzeci User");
-        statisticsMap.add("Czwarty User");
-        statisticsMap.add("Piaty User");
-        statisticsMap.add("Szósty User");
-        statisticsMap.add("Siódmy User");
-        statisticsMap.add("Ósmy User");
-        statisticsMap.add("Dziewiąty User");
-        statisticsMap.add("Dziesiąty User");
-        statisticsMap.add("Pierwszy User");
-        statisticsMap.add("Drugi User");
-        statisticsMap.add("Trzeci User");
-        statisticsMap.add("Czwarty User");
-        statisticsMap.add("Piaty User");
-        statisticsMap.add("Szósty User");
-        statisticsMap.add("Siódmy User");
-        statisticsMap.add("Ósmy User");
-        statisticsMap.add("Dziewiąty User");
-        statisticsMap.add("Dziesiąty User");
-        statisticsMap.add("Pierwszy User");
-        statisticsMap.add("Drugi User");
-        statisticsMap.add("Trzeci User");
-        statisticsMap.add("Czwarty User");
-        statisticsMap.add("Piaty User");
-        statisticsMap.add("Szósty User");
-        statisticsMap.add("Siódmy User");
-        statisticsMap.add("Ósmy User");
-        statisticsMap.add("Dziewiąty User");
-        statisticsMap.add("Dziesiąty User");
-        when(statistics100Users.usersNames()).thenReturn(statisticsMap);
-
-        //When
-        CalculateStatistics calculateStatistics = new CalculateStatistics();
-        calculateStatistics.calculateAdvStatistics(statistics100Users);
-
-        //Then
-        Assert.assertEquals(calculateStatistics.usersNames(), 100);
-    }
-
-
-
- //   @Test
- //   public testUsersQuantity(){
-//        CalculateStatistics.
-//    }
 
 }
