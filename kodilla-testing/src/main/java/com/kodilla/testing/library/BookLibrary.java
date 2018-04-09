@@ -21,10 +21,7 @@ public class BookLibrary {
     }
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser){
-        List<Book> rentList = new ArrayList<>();
-        Book rent = new Book("Rent Book title", "Book Author", 2011);
-        rentList.add(rent);
-        return rentList;
+        return libraryDatabase.listBooksInHandsOf(libraryUser);
     }
 
 

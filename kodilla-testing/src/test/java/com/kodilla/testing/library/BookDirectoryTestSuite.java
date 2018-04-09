@@ -88,12 +88,15 @@ public class BookDirectoryTestSuite {
     public void test0BooksInHandsOf(){
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary rentLibrary = new BookLibrary(libraryDatabaseMock);
+        LibraryUser libraryUser = new LibraryUser("John", "Smith", "8654851556");
         List<Book> resultListOf5Books = generateListOfBooks(5);
-        when(libraryDatabaseMock.listBooksInHandsOf()).thenReturn(resultListOf5Books);
+        when(libraryDatabaseMock.listBooksInHandsOf(anyObject())).thenReturn(resultListOf5Books);
 
         //When
-        List<Book> theListBooks5 = rentLibrary.listBooksInHandsOf("John", "Smith", "8654851556");
+      //  List<Book> theListBooks5 = rentLibrary.listBooksInHandsOf("John", "Smith", "8654851556");
 
+        //Then
+  //      assertEquals(0, "John", "Smith", "8654851556" );
 
     }
 
