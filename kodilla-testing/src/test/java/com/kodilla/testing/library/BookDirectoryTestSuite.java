@@ -93,10 +93,10 @@ public class BookDirectoryTestSuite {
         when(libraryDatabaseMock.listBooksInHandsOf(anyObject())).thenReturn(resultListOf0Books);
 
         //When
-        List<Book> theListBooks5 = rentLibrary.listBooksInHandsOf(libraryUser);
+        List<Book> theListBooks0 = rentLibrary.listBooksInHandsOf(libraryUser);
 
         //Then
-        assertEquals(0, resultListOf0Books.size());
+        assertEquals(0, theListBooks0.size());
     }
 
     @Test
@@ -111,7 +111,7 @@ public class BookDirectoryTestSuite {
         List<Book> book = rentLibrary.listBooksInHandsOf(libraryUser);
 
         //Then
-        assertEquals(1, resultListOf1Book.size());
+        assertEquals(1, book.size());
     }
 
     @Test
@@ -126,6 +126,6 @@ public class BookDirectoryTestSuite {
         List<Book> theListBooks5 = rentLibrary.listBooksInHandsOf(libraryUser);
 
         //Then
-        assertEquals(5, resultListOf5Books.size());
+        assertEquals(5, theListBooks5.size());
     }
 }
