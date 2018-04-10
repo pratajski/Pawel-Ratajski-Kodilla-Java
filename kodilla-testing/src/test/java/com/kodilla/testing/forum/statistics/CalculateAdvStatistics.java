@@ -93,12 +93,6 @@ public class CalculateAdvStatistics {
         //Given
         Statistics statistics0Users = mock(Statistics.class);
         ArrayList<String> statisticsMap = new ArrayList<>();
- //       statisticsMap.add("Pierwszy User");
- //       statisticsMap.add("Drugi User");
- //       statisticsMap.add("Trzeci User");
- //       statisticsMap.add("Czwarty User");
-  //      statisticsMap.add("Piaty User");
-
         when(statistics0Users.usersNames()).thenReturn(statisticsMap);
 
         //When

@@ -85,7 +85,39 @@ public class BookDirectoryTestSuite {
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
     }
     @Test
-    public void test0BooksInHandsOf(){
+    public void  (){
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary rentLibrary = new BookLibrary(libraryDatabaseMock);
+        LibraryUser libraryUser = new LibraryUser("John", "Smith", "8654851556");
+        List<Book> resultListOf0Books = generateListOfBooks(0);
+        when(libraryDatabaseMock.listBooksInHandsOf(anyObject())).thenReturn(resultListOf0Books);
+
+        //When
+        List<Book> theListBooks5 = rentLibrary.listBooksInHandsOf(libraryUser);
+
+        //Then
+        assertEquals(0, resultListOf0Books.size());
+
+    }
+
+    @Test
+    public void test1BooksInHandsOf(){
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary rentLibrary = new BookLibrary(libraryDatabaseMock);
+        LibraryUser libraryUser = new LibraryUser("John", "Smith", "8654851556");
+        List<Book> resultListOf1Book = generateListOfBooks(1);
+        when(libraryDatabaseMock.listBooksInHandsOf(anyObject())).thenReturn(resultListOf1Book);
+
+        //When
+        List<Book> book = rentLibrary.listBooksInHandsOf(libraryUser);
+
+        //Then
+        assertEquals(1, resultListOf1Book.size());
+
+    }
+
+    @Test
+    public void test5BooksInHandsOf(){
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary rentLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser libraryUser = new LibraryUser("John", "Smith", "8654851556");
@@ -93,20 +125,10 @@ public class BookDirectoryTestSuite {
         when(libraryDatabaseMock.listBooksInHandsOf(anyObject())).thenReturn(resultListOf5Books);
 
         //When
-      //  List<Book> theListBooks5 = rentLibrary.listBooksInHandsOf("John", "Smith", "8654851556");
+        List<Book> theListBooks5 = rentLibrary.listBooksInHandsOf(libraryUser);
 
         //Then
-  //      assertEquals(0, "John", "Smith", "8654851556" );
-
-    }
-
-    @Test
-    public void test1BooksInHandsOf(){
-
-    }
-
-    @Test
-    public void test5BooksInHandsOf(){
+        assertEquals(5, resultListOf5Books.size());
 
     }
 
