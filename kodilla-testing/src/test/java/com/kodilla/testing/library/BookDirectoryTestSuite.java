@@ -85,7 +85,7 @@ public class BookDirectoryTestSuite {
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
     }
     @Test
-    public void  (){
+    public void test0BooksInHandsOf(){
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary rentLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser libraryUser = new LibraryUser("John", "Smith", "8654851556");
@@ -97,7 +97,6 @@ public class BookDirectoryTestSuite {
 
         //Then
         assertEquals(0, resultListOf0Books.size());
-
     }
 
     @Test
@@ -113,7 +112,6 @@ public class BookDirectoryTestSuite {
 
         //Then
         assertEquals(1, resultListOf1Book.size());
-
     }
 
     @Test
@@ -129,7 +127,5 @@ public class BookDirectoryTestSuite {
 
         //Then
         assertEquals(5, resultListOf5Books.size());
-
     }
-
 }
