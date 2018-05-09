@@ -19,9 +19,10 @@ public class WorldTestSuite {
         Continent europe = new Continent(countries);
 
         ArrayList<Continent> continents = new ArrayList<>();
+        continents.add(europe);
         World world = new World(continents);
 
-        Assert.assertEquals(world.getPeopleQuantity(), new BigDecimal("155"));
+        Assert.assertEquals(new BigDecimal("155"), world.getPeopleQuantity());
     }
 
 
