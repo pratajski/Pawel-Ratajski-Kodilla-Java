@@ -23,5 +23,13 @@ public class StreamMain {
               ;
 
          System.out.println("Result: " +theFoumList);
+
+
+
+
+
+
+
+
    }
 }
