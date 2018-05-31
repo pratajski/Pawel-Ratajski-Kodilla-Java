@@ -3,16 +3,10 @@ package com.kodilla.exception.test;
 public class FirstChallenge {
 
     public double divide(double a, double b) throws ArithmeticException {
-
-        try {
-            return a / b;
-        }catch (ArithmeticException exc){
-            return 0;
+        if(b == 0){
+            throw new ArithmeticException();
         }
-
-//return 0;
-//System.out.println("B = 0"); ;
-
+        return a / b;
     }
 
     /**
@@ -23,9 +17,17 @@ public class FirstChallenge {
 
         FirstChallenge firstChallenge = new FirstChallenge();
 
-        double result = firstChallenge.divide(3, 0);
 
-        System.out.println(result);
+       try {
+            double result = firstChallenge.divide(3, 0);
+            System.out.println(result);
+        }catch (ArithmeticException Art) {
+            System.out.println("B must be different from 0");
+        }finally {
+           System.out.println("Function checked");
+       }
+
+
 
     }
 }
