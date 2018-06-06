@@ -1,7 +1,7 @@
 package com.kodilla.exception.test;
 
-public class RouteNotFoundException extends Throwable {
-    public void Message() {
-        System.out.println("The airport does not exist");
+public class RouteNotFoundException extends Exception {
+    public RouteNotFoundException() {
+        super("Route not found.");
     }
 }
