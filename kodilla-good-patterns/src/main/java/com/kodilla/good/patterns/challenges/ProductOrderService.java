@@ -1,32 +1,27 @@
 package com.kodilla.good.patterns.challenges;
 
 public class ProductOrderService {
-
-
-
-    /*
     private InformationService informationService;
-    private RentalService rentalService;
-    private RentalRepository rentalRepository;
+    private SellService sellService;
+    private SellRepository sellRepository;
 
-    public RentalProcessor(final InformationService informationService,
-                           final RentalService rentalService,
-                           final RentalRepository rentalRepository) {
+    public ProductOrderService(final InformationService informationService,
+                              final SellService sellService,
+                              final SellRepository sellRepository) {
         this.informationService = informationService;
-        this.rentalService = rentalService;
-        this.rentalRepository = rentalRepository;
+        this.sellService = sellService;
+        this.sellRepository = sellRepository;
     }
 
-    public RentalDto process(final RentRequest rentRequest) {
-        boolean isRented = rentalService.rent(rentRequest.getUser(), rentRequest.getFrom(),
-                rentRequest.getTo());
+    public SellDto process(final SellRequest sellRequest) {
+        boolean isSell = sellService.sell(sellRequest.getUser(), sellRequest.getSellDate(), sellRequest.getProduct());
 
-        if(isRented) {
-            informationService.inform(rentRequest.getUser());
-            rentalRepository.createRental(rentRequest.getUser(), rentRequest.getFrom(), rentRequest.getTo());
-            return new RentalDto(rentRequest.getUser(), true);
+        if (isSell) {
+            informationService.inform(sellRequest.getUser());
+            sellRepository.createSell(sellRequest.getUser(), sellRequest.getSellDate());
+            return new SellDto(sellRequest.getUser(), true);
         } else {
-            return new RentalDto(rentRequest.getUser(), false);
+            return new SellDto(sellRequest.getUser(), false);
         }
-    }*/
+    }
 }
