@@ -7,7 +7,8 @@ public class Application {
         SellRequestRetriever sellRequestRetriever = new SellRequestRetriever();
         SellRequest sellRequest = sellRequestRetriever.retrieve();
 
-   //     ProductOrderService productOrderService = new ProductOrderService(InformationService(), SellService(), SellRepository() );
+ //       System.out.println(ProductOrderService);
+  //      ProductOrderService productOrderService = new ProductOrderService(InformationService(), SellService(), SellRepository() );
 
 
 
