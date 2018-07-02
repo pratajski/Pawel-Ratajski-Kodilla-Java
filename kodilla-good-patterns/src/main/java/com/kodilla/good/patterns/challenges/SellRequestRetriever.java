@@ -10,5 +10,4 @@ public class SellRequestRetriever {
 
         return new SellRequest(user, SellDate, product);
     }
-
 }

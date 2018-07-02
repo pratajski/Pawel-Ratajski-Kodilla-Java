@@ -23,4 +23,6 @@ public class SellRequest {
     public Product getProduct() {
         return product;
     }
+
+
 }

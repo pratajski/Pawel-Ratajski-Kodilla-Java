@@ -6,11 +6,11 @@ public class Application {
     public static void main(String[] args) {
         SellRequestRetriever sellRequestRetriever = new SellRequestRetriever();
         SellRequest sellRequest = sellRequestRetriever.retrieve();
+        ProductOrderService productOrderService = new ProductOrderService();
+        productOrderService.process(sellRequest);
+/*
 
- //       System.out.println(ProductOrderService);
-  //      ProductOrderService productOrderService = new ProductOrderService(InformationService(), SellService(), SellRepository() );
-
-
+ */
 
 
     }
