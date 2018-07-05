@@ -15,6 +15,8 @@ public class RpsRunner {
         Scanner keyboardWin = new Scanner(System.in);
         int win = 0;
         int result = 0;
+        int playerScore = 0;
+        int computerScore = 0;
         boolean end = false;
         boolean repeat = false;
         int cheat = 0;
@@ -94,6 +96,7 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera nożyce");
                     System.out.println("Kamień niszczy nożyce. Wygrywa " +playerName);
                     result++;
+                    playerScore++;
                     cheatQuantity = 0;
                 }
 
@@ -109,6 +112,7 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera jaszczurkę");
                     System.out.println("Nożyce ranią jaszczurkę.  Wygrywa " +playerName);
                     result++;
+                    playerScore++;
                     cheatQuantity = 0;
                 }
 
@@ -117,6 +121,7 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera papier");
                     System.out.println("Jaszczurka zjada papier. Wygrywa " +playerName);
                     result++;
+                    playerScore++;
                     cheatQuantity = 0;
                 }
 
@@ -125,6 +130,7 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera kamień");
                     System.out.println("Spock kruszy kamień. Wygrywa " +playerName);
                     result++;
+                    playerScore++;
                     cheatQuantity = 0;
                 }
 
@@ -138,6 +144,7 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera papier");
                     System.out.println("Papier owija kamień. Wygrywa komputer");
                     result--;
+                    computerScore++;
                     cheatQuantity++;
                 }
                 if ((choice == 1)&&(computerPlayer == 3)) {
@@ -145,18 +152,21 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera nożyce");
                     System.out.println("Kamień niszczy nożyce. Wygrywa " +playerName);
                     result++;
+                    playerScore++;
                 }
                 if ((choice == 1)&&(computerPlayer == 4)) {
                     System.out.println(playerName + " wybiera kamień");
                     System.out.println("Komputer wybiera jaszczurkę");
                     System.out.println("Kamień zgniata jaszczurkę. Wygrywa " +playerName);
                     result++;
+                    playerScore++;
                 }
                 if ((choice == 1)&&(computerPlayer == 5)) {
                     System.out.println(playerName + " wybiera kamień");
                     System.out.println("Komputer wybiera Spocka");
                     System.out.println("Spock kruszy kamień. Wygrywa komputer");
                     result--;
+                    computerScore++;
                     cheatQuantity++;
                 }
 
@@ -165,6 +175,7 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera kamień");
                     System.out.println("papier owija kamień. Wygrywa " +playerName);
                     result++;
+                    playerScore++;
                 }
                 if ((choice == 2)&&(computerPlayer == 2)) {
                     System.out.println(playerName + " wybiera papier");
@@ -176,6 +187,7 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera nożyce");
                     System.out.println("Nożyce tną papier. Wygrywa komputer");
                     result--;
+                    computerScore++;
                     cheatQuantity++;
                 }
                 if ((choice == 2)&&(computerPlayer == 4)) {
@@ -183,6 +195,7 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera jaszczurkę");
                     System.out.println("Jaszczurka zjada papier.  Wygrywa komputer");
                     result--;
+                    computerScore++;
                     cheatQuantity++;
                 }
                 if ((choice == 2)&&(computerPlayer == 5)) {
@@ -190,6 +203,7 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera Spocka");
                     System.out.println("papier udowadnia błąd Spocka. Wygrywa " +playerName);
                     result++;
+                    playerScore++;
                 }
 
                 if ((choice == 3)&&(computerPlayer == 1)) {
@@ -197,6 +211,7 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera kamień");
                     System.out.println("Kamień niszczy nożyce. Wygrywa komputer");
                     result--;
+                    computerScore++;
                     cheatQuantity++;
                 }
                 if ((choice == 3)&&(computerPlayer == 2)) {
@@ -204,6 +219,7 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera papier");
                     System.out.println("Nożyce tną papier. Wygrywa " +playerName);
                     result++;
+                    playerScore++;
                 }
                 if ((choice == 3)&&(computerPlayer == 3)) {
                     System.out.println(playerName + " wybiera nożyce");
@@ -215,12 +231,14 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera jaszczurkę");
                     System.out.println("Nożyce ranią jaszczurkę.  Wygrywa " +playerName);
                     result++;
+                    playerScore++;
                 }
                 if ((choice == 3)&&(computerPlayer == 5)) {
                     System.out.println(playerName + " wybiera nożyce");
                     System.out.println("Komputer wybiera Spocka");
                     System.out.println("Spock łamie nożyce. Wygrywa komputer");
                     result--;
+                    computerScore++;
                     cheatQuantity++;
                 }
 
@@ -229,6 +247,7 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera kamień");
                     System.out.println("Kamień zgniata jaszczurkę. Wygrywa komputer");
                     result--;
+                    computerScore++;
                     cheatQuantity++;
                 }
                 if ((choice == 4)&&(computerPlayer == 2)) {
@@ -236,12 +255,14 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera papier");
                     System.out.println("Jaszczurka zjada papier. Wygrywa " +playerName);
                     result++;
+                    playerScore++;
                 }
                 if ((choice == 4)&&(computerPlayer == 3)) {
                     System.out.println(playerName + " wybiera jaszczurkę");
                     System.out.println("Komputer wybiera nożyce");
                     System.out.println("Nożyce ranią jaszczurkę. Wygrywa komputer");
                     result--;
+                    computerScore++;
                     cheatQuantity++;
                 }
                 if ((choice == 4)&&(computerPlayer == 4)){
@@ -254,6 +275,7 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera Spocka");
                     System.out.println("Jaszczurka zatruwa Spocka. Wygrywa komputer");
                     result--;
+                    computerScore++;
                     cheatQuantity++;
                 }
 
@@ -262,12 +284,14 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera kamień");
                     System.out.println("Spock kruszy kamień. Wygrywa " +playerName);
                     result++;
+                    playerScore++;
                 }
                 if ((choice == 5)&&(computerPlayer == 2)) {
                     System.out.println(playerName + " wybiera Spocka");
                     System.out.println("Komputer wybiera papier");
                     System.out.println("Papier udowadnia błąd Spocka. Wygrywa komputer");
                     result--;
+                    computerScore++;
                     cheatQuantity++;
                 }
                 if ((choice == 5)&&(computerPlayer == 3)) {
@@ -275,12 +299,14 @@ public class RpsRunner {
                     System.out.println("Komputer wybiera nożyce");
                     System.out.println("Spock łamie nożyce. Wygrywa " +playerName);
                     result++;
+                    playerScore++;
                 }
                 if ((choice == 5)&&(computerPlayer == 4)){
                     System.out.println(playerName + " wybiera Spocka");
                     System.out.println("Komputer wybiera jaszczurkę");
                     System.out.println("Jaszczurka zatruwa Spocka. Wygrywa komputer");
                     result--;
+                    computerScore++;
                     cheatQuantity++;
                 }
                 if ((choice == 5)&&(computerPlayer == 5)) {
@@ -306,7 +332,10 @@ public class RpsRunner {
                 if (repeatTest == 1)
                 {
                     repeat = false;
-                }else
+                    playerScore = 0;
+                    computerScore = 0;
+                }
+                else
                 {
                     System.out.println("Koniec gry");
                     repeat = false;
@@ -314,7 +343,9 @@ public class RpsRunner {
                 }
 
             }
-
+            System.out.println("Aktualny wynik");
+            System.out.println("Ilość zwycięstw gracza " +playerName +" wynosi " +playerScore);
+            System.out.println("Ilość zwycięstw gracza komputerowego wynosi " +computerScore);
         }
     }
 }
