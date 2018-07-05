@@ -25,4 +25,15 @@ public class ProductOrderService {
         }
     }
 
+    public InformationService getInformationService() {
+        return informationService;
+    }
+
+    public SellService getSellService() {
+        return sellService;
+    }
+
+    public SellRepository getSellRepository() {
+        return sellRepository;
+    }
 }
