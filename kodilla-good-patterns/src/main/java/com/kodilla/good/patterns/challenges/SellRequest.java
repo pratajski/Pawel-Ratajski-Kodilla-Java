@@ -10,6 +10,7 @@ public class SellRequest {
     public SellRequest(final User user, final LocalDateTime sellDate, final Product product) {
         this.user = user;
         this.sellDate = sellDate;
+        this.product = product;
     }
 
     public User getUser() {

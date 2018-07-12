@@ -6,7 +6,7 @@ public class SellRepositoryExt implements SellRepository {
     @Override
     public boolean createSell(User user, LocalDateTime sellDate)
     {
-
+        System.out.println("User bought" );
         return true;
     }
 }
