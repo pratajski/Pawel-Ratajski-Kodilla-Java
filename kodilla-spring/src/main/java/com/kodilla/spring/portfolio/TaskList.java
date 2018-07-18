@@ -15,4 +15,7 @@ public class TaskList {
         tasks.add(task);
     }
 
+    public List<String> getTasks() {
+        return tasks;
+    }
 }

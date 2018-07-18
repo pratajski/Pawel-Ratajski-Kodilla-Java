@@ -54,16 +54,4 @@ public class BoardConfig {
         return new Board(toDoList, inProgressList, doneList);
     }
 
-    @Bean(name = "task2")
-    @Scope("prototype")
-    public Board getBoardTwo() {
-        return new Board(toDoList, inProgressList, doneList);
-    }
-
-    @Bean(name = "task3")
-    @Scope("prototype")
-    public Board getBoardThree() {
-        return new Board(toDoList, inProgressList, doneList);
-    }
-
 }
