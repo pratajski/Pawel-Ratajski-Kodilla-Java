@@ -12,28 +12,58 @@ public class BoardConfig {
     @Qualifier("task1")
     Board board;
 
+    @Autowired
+    @Qualifier("toDoList")
+    private TaskList toDoList;
+
+    @Autowired
+    @Qualifier("inProgressList")
+    private TaskList inProgressList;
+
+    @Autowired
+    @Qualifier("doneList")
+    private TaskList doneList;
+
     @Bean
     public TaskList getTask() {
         return new TaskList();
     }
 
+    @Bean(name = "toDoList")
+    @Scope("prototype")
+    public TaskList toDoList() {
+        return new TaskList();
+    }
+
+    @Bean(name = "inProgressList")
+    @Scope("prototype")
+    public TaskList inProgressList() {
+        return new TaskList();
+    }
+
+    @Bean(name = "doneList")
+    @Scope("prototype")
+    public TaskList doneList() {
+        return new TaskList();
+    }
+
+
     @Bean(name = "task1")
     @Scope("prototype")
     public Board getBoardOne() {
-        return new Board();
+        return new Board(toDoList, inProgressList, doneList);
     }
 
     @Bean(name = "task2")
     @Scope("prototype")
     public Board getBoardTwo() {
-        return new Board();
+        return new Board(toDoList, inProgressList, doneList);
     }
 
     @Bean(name = "task3")
     @Scope("prototype")
     public Board getBoardThree() {
-        return new Board();
+        return new Board(toDoList, inProgressList, doneList);
     }
-
 
 }
