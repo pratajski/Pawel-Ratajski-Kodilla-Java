@@ -1,5 +1,6 @@
 package com.kodilla.patterns.prototype.library;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -25,8 +26,6 @@ public class LibraryTestSuite {
         } catch (CloneNotSupportedException e) {
             System.out.println(e);
         }
-        System.out.println(library);
-        System.out.println(cloneLibrary);
 
         Library deepClonedLibrary = null;
         try {
@@ -35,10 +34,15 @@ public class LibraryTestSuite {
         } catch (CloneNotSupportedException e) {
             System.out.println(e);
         }
-        System.out.println(deepClonedLibrary);
 
     //Then
-
-
+        System.out.println(library);
+        System.out.println(cloneLibrary);
+        System.out.println(deepClonedLibrary);
+        Assert.assertEquals(3, library.getBooks().size());
+        Assert.assertEquals(3, cloneLibrary.getBooks().size());
+        Assert.assertEquals(3, deepClonedLibrary.getBooks().size());
+        Assert.assertEquals(cloneLibrary.getBooks(), library.getBooks());
+        Assert.assertNotEquals(deepClonedLibrary.getBooks(), library.getBooks());
     }
 }
