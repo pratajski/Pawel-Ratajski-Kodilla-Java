@@ -13,16 +13,16 @@ public class DrivingTask implements Task {
 
     @Override
     public void executeTask() {
-        System.out.println("Kod wykonywany");
+        System.out.println("DrivingTask");
     }
 
     @Override
     public String getTaskName() {
-        return taskName;
+        return null;
     }
 
     @Override
     public boolean isTaskExecuted() {
-        return true;
+        return false;
     }
 }

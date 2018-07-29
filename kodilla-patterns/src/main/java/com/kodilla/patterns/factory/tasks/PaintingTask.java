@@ -10,4 +10,18 @@ public class PaintingTask implements Task {
         this.color = color;
         this.whatToPaint = whatToPaint;
     }
+    @Override
+    public void executeTask() {
+        System.out.println("PaintingTask");
+    }
+
+    @Override
+    public String getTaskName() {
+        return null;
+    }
+
+    @Override
+    public boolean isTaskExecuted() {
+        return false;
+    }
 }
