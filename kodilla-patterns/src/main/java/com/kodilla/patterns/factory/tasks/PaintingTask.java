@@ -17,7 +17,7 @@ public class PaintingTask implements Task {
 
     @Override
     public String getTaskName() {
-        return null;
+        return taskName;
     }
 
     @Override

@@ -12,7 +12,7 @@ public class TaskFactoryTestSuite {
         Task driving = factory.makeTask(TaskFactory.DRIVING);
         //Then
  //       Assert.assertEquals(Math.PI * Math.pow(4.50, 2.0), driving.getArea(), 0);
-        Assert.assertEquals("The rounded circle", driving.getTaskName());
+        Assert.assertEquals("Driving", driving.getTaskName());
     }
 
     @Test
@@ -23,7 +23,7 @@ public class TaskFactoryTestSuite {
         Task painting = factory.makeTask(TaskFactory.PAINTING);
         //Then
 //        Assert.assertEquals(28.0, painting.getCircumference(), 0);
-        Assert.assertEquals("The angular square", painting.getTaskName());
+        Assert.assertEquals("Paint", painting.getTaskName());
     }
 
     @Test
@@ -34,7 +34,7 @@ public class TaskFactoryTestSuite {
         Task shopping = factory.makeTask(TaskFactory.SHOPPING);
         //Then
 //        Assert.assertEquals(37.50, shopping.executeTask() .getArea(), 0);
-        Assert.assertEquals("The long rectangle", shopping.getTaskName());
+        Assert.assertEquals("Shopping", shopping.getTaskName());
     }
 
 }
