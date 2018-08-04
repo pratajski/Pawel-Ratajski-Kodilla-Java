@@ -1,5 +1,7 @@
 package com.kodilla.hibernate;
 
+import com.kodilla.hibernate.task.TaskFinancialDetails;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -11,6 +13,7 @@ public final class Task {
     private String description;
     private Date created;
     private int duration;
+    private TaskFinancialDetails taskFinancialDetails;
 
     public Task() {
     }

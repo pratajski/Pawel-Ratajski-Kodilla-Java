@@ -21,7 +21,7 @@ public class TaskListDaoTestSuite {
     public void testFindByListName() {
         //Given
         TaskList taskList = new TaskList(1, "List",  DESCRIPTION);
-        taskListDao.save(taskList);
+        TaskList savedTaskList = taskListDao.save(taskList);
         String name = taskList.getListName();
 
         //When
@@ -31,6 +31,6 @@ public class TaskListDaoTestSuite {
         Assert.assertEquals(1, readTaskList.size());
 
         //CleanUp
-        taskListDao.delete(readTaskList);
+        taskListDao.delete(savedTaskList);
     }
 }
