@@ -5,15 +5,11 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "TASKLISTS")
-
-
 public final class TaskList {
     private int id;
     private String listName;
     private String description;
-
     public TaskList(){
-
     }
 
     public TaskList(int id, String listName, String description) {

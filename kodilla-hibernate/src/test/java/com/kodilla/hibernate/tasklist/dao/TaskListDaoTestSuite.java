@@ -15,23 +15,23 @@ import java.util.List;
 public class TaskListDaoTestSuite {
     @Autowired
     private TaskListDao taskListDao;
-    private static final String DESCRIPTION = "Test: Learn Hibernate";
+    private static final String DESCRIPTION = "Test: List Hibernate";
 
     @Test
     public void testFindByListName() {
         //Given
-        TaskList taskList = new TaskList(1, "List",  "FirstList");
+        TaskList taskList = new TaskList(1, "List",  DESCRIPTION);
         taskListDao.save(taskList);
-        int duration = taskList.getId();
+        String name = taskList.getListName();
 
         //When
-        List<TaskList> readTaskList = taskListDao.findByListName("Lee");
+        List<TaskList> readTaskList = taskListDao.findByListName(name);
 
         //Then
         Assert.assertEquals(1, readTaskList.size());
 
         //CleanUp
-        int id = readTaskList.get(0).getId();
-        taskListDao.delete(taskList);
+        int id = readTaskList.size();
+        taskListDao.delete(id);
     }
 }
