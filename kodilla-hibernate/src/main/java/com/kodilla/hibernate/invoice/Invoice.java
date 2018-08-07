@@ -11,8 +11,10 @@ public class Invoice {
     private String number;
     private List<Item> items;
 
-    public Invoice(int id, String number, List<Item> items) {
-        this.id = id;
+    public Invoice() {
+    }
+
+    public Invoice(String number, List<Item> items) {
         this.number = number;
         this.items = items;
     }
@@ -25,22 +27,27 @@ public class Invoice {
         return id;
     }
 
-    @NotNull
-    @Column(name = "INVOICE_NUMBER")
-    public String getNumber() {
-        return number;
-    }
-
-    public List<Item> getItems() {
-        return items;
-    }
-
     public void setId(int id) {
         this.id = id;
     }
 
+    @Column(name = "NUMBER")
+    public String getNumber() {
+        return number;
+    }
+
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    @OneToMany(
+            targetEntity = Item.class,
+            mappedBy = "invoice",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER
+    )
+    public List<Item> getItems() {
+        return items;
     }
 
     public void setItems(List<Item> items) {
