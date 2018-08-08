@@ -2,6 +2,7 @@ package com.kodilla.hibernate.tasklist.dao;
 
 import com.kodilla.hibernate.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;
+import com.kodilla.hibernate.task.dao.TaskDao;
 import com.kodilla.hibernate.tasklist.TaskList;
 import org.junit.Assert;
 import org.junit.Test;
@@ -19,6 +20,9 @@ public class TaskListDaoTestSuite {
     @Autowired
     private TaskListDao taskListDao;
     private static final String DESCRIPTION = "Test: List Hibernate";
+
+    @Autowired
+    private TaskDao taskDao;
 
     @Test
     public void testFindByListName() {
@@ -59,7 +63,7 @@ public class TaskListDaoTestSuite {
         Assert.assertNotEquals(0, id);
 
         //CleanUp
-        //taskListDao.delete(id);
+ //       taskListDao.delete(id);
     }
  @Test
  public void testNamedQueries() {
@@ -99,13 +103,13 @@ public class TaskListDaoTestSuite {
      List<Task> enoughTimeTasks = taskDao.retrieveTasksWithEnoughTime();
 
      //Then
-     try {
-         Assert.assertEquals(1, longTasks.size());
-         Assert.assertEquals(3, shortTasks.size());
-         Assert.assertEquals(3, enoughTimeTasks.size());
-     } finally {
+//     try {
+        Assert.assertEquals(1, longTasks.size());
+        Assert.assertEquals(3, shortTasks.size());
+        Assert.assertEquals(3, enoughTimeTasks.size());
+ //   } finally {
          //CleanUp
-         taskListDao.delete(id);
-     }
+ //       taskListDao.delete(taskList);
+   //  }
  }
 }
