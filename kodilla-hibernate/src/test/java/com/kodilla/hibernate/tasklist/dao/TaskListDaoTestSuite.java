@@ -23,7 +23,7 @@ public class TaskListDaoTestSuite {
     @Test
     public void testFindByListName() {
         //Given
-        TaskList taskList = new TaskList(1, "List",  DESCRIPTION);
+        TaskList taskList = new TaskList("List",  DESCRIPTION);
         TaskList savedTaskList = taskListDao.save(taskList);
         String name = taskList.getListName();
 
@@ -45,7 +45,7 @@ public class TaskListDaoTestSuite {
         TaskFinancialDetails tfd2 = new TaskFinancialDetails(new BigDecimal(10), false);
         task.setTaskFinancialDetails(tfd);
         task2.setTaskFinancialDetails(tfd2);
-        TaskList taskList = new TaskList(LISTNAME, "ToDo tasks");
+        TaskList taskList = new TaskList("LISTNAME", "ToDo tasks");
         taskList.getTasks().add(task);
         taskList.getTasks().add(task2);
         task.setTaskList(taskList);
@@ -79,7 +79,7 @@ public class TaskListDaoTestSuite {
      task3.setTaskFinancialDetails(tfd3);
      task4.setTaskFinancialDetails(tfd4);
 
-     TaskList taskList = new TaskList(LISTNAME, "ToDo tasks");
+     TaskList taskList = new TaskList("LISTNAME", "ToDo tasks");
      taskList.getTasks().add(task1);
      taskList.getTasks().add(task2);
      taskList.getTasks().add(task3);
