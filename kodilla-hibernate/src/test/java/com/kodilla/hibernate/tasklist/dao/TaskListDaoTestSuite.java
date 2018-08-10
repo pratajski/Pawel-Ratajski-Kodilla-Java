@@ -94,8 +94,9 @@ public class TaskListDaoTestSuite {
      task3.setTaskList(taskList);
      task4.setTaskList(taskList);
 
-     taskListDao.save(taskList);
-     int id = taskList.getId();
+  //   taskListDao.save(taskList);
+  //   int id = taskList.getId();
+     List<TaskList> readTaskList = taskListDao.findByListName("LISTNAME");
 
      //When
      List<Task> longTasks = taskDao.retrieveLongTasks();
@@ -103,13 +104,13 @@ public class TaskListDaoTestSuite {
      List<Task> enoughTimeTasks = taskDao.retrieveTasksWithEnoughTime();
 
      //Then
-//     try {
+    try {
         Assert.assertEquals(1, longTasks.size());
         Assert.assertEquals(3, shortTasks.size());
         Assert.assertEquals(3, enoughTimeTasks.size());
- //   } finally {
+    } finally {
          //CleanUp
- //       taskListDao.delete(taskList);
-   //  }
+        taskListDao.delete(readTaskList);
+     }
  }
 }
