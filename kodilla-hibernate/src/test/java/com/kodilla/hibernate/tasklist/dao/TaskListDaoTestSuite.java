@@ -93,23 +93,27 @@ public class TaskListDaoTestSuite {
      task3.setTaskList(taskList);
      task4.setTaskList(taskList);
 
-  //   taskListDao.save(taskList);
-  //   int id = taskList.getId();
-     List<TaskList> readTaskList = taskListDao.findByListName("LISTNAME");
+     taskListDao.save(taskList);
+     int id = taskList.getId();
+
+     taskListDao.deleteAll();
+  //   List<TaskList> readTaskList = taskListDao.findByListName("LISTNAME");
 
      //When
      List<Task> longTasks = taskDao.retrieveLongTasks();
      List<Task> shortTasks = taskDao.retrieveShortTasks();
      List<Task> enoughTimeTasks = taskDao.retrieveTasksWithEnoughTime();
+     List<Task> durationLongerThanTasks = taskDao.retrieveTasksWithDurationLongerThan(6);
 
      //Then
     try {
         Assert.assertEquals(1, longTasks.size());
         Assert.assertEquals(3, shortTasks.size());
         Assert.assertEquals(3, enoughTimeTasks.size());
+        Assert.assertEquals(2, durationLongerThanTasks.size());
     } finally {
          //CleanUp
-        taskListDao.delete(readTaskList);
+        taskListDao.delete(id);
      }
  }
 }
