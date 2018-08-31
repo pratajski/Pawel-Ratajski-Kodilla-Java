@@ -62,7 +62,7 @@ public class TaskListDaoTestSuite {
             Assert.assertNotEquals(0, savedTask.getId());
 
             //CleanUp
-   //         taskListDao.delete(savedTask.getId());
+            taskListDao.delete(savedTask.getId());
     }
  @Test
  public void testNamedQueries() {
@@ -96,7 +96,7 @@ public class TaskListDaoTestSuite {
      taskListDao.save(taskList);
      int id = taskList.getId();
 
-     taskListDao.deleteAll();
+  //   taskListDao.deleteAll();
   //   List<TaskList> readTaskList = taskListDao.findByListName("LISTNAME");
 
      //When
