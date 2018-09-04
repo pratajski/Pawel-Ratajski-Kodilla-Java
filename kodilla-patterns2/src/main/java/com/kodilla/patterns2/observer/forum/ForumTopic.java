@@ -16,12 +16,12 @@ public class ForumTopic implements Observable{
 
     public void addPost(String post) {
         messages.add(post);
+        notifyObservers();
     }
 
     @Override
     public void registerObserver(Observer observer) {
         observers.add(observer);
-        notifyObservers();
     }
 
     @Override

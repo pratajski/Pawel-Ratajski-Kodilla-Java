@@ -11,6 +11,11 @@ import java.util.List;
                 " WHERE SUBSTRING(COMPANY_NAME, 1, 3 ) = :THREE_LETTERS"
 )
 
+@NamedQuery(
+        name = "Company.findCompanyByFragment",
+        query = "FROM Company WHERE name LIKE :ARG"
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
